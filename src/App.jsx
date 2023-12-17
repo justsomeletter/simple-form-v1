@@ -44,3 +44,48 @@ function App() {
 }
 
 export default App;
+
+/*
+const express = require('express');
+const mysql = require('mysql');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = 5000;
+
+// Create a MySQL connection
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'your_mysql_user',
+  password: 'your_mysql_password',
+  database: 'your_database_name',
+});
+
+connection.connect();
+
+// Middleware to parse JSON data
+app.use(bodyParser.json());
+
+// API endpoint to handle form submissions
+app.post('/submit-form', (req, res) => {
+  const formData = req.body;
+
+  // Insert data into the database
+  const sql = 'INSERT INTO your_table_name SET ?';
+
+  connection.query(sql, formData, (err, result) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Internal Server Error');
+    } else {
+      console.log('Data inserted successfully');
+      res.status(200).send('Data inserted successfully');
+    }
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+*/
